@@ -5,6 +5,7 @@ SendMode Input
 SetWorkingDir %A_ScriptDir%
 
 isStop := 1
+phongThanWinTitle := "Phong Than_Dong Thien Phuc Dia"
 
 Menu, Tray, NoStandard
 Menu, Tray, Tip, FS Auto Skills
@@ -39,76 +40,56 @@ return
 cbKeyQ:
   Gui, Submit, NoHide
 
-  If cbKeyQ = 1
-    GuiControl, -Disabled, eTimeDelayKeyQ
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyQ
+  controlDisableToggle(cbKeyQ, "eTimeDelayKeyQ")
 return
 cbKeyW:
   Gui, Submit, NoHide
 
-  If cbKeyW = 1
-    GuiControl, -Disabled, eTimeDelayKeyW
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyW
+  controlDisableToggle(cbKeyW, "eTimeDelayKeyW")
 return
 cbKeyE:
   Gui, Submit, NoHide
 
-  If cbKeyE = 1
-    GuiControl, -Disabled, eTimeDelayKeyE
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyE
+  controlDisableToggle(cbKeyE, "eTimeDelayKeyE")
 return
 cbKeyA:
   Gui, Submit, NoHide
 
-  If cbKeyA = 1
-    GuiControl, -Disabled, eTimeDelayKeyA
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyA
+  controlDisableToggle(cbKeyA, "eTimeDelayKeyA")
 return
 cbKeyS:
   Gui, Submit, NoHide
 
-  If cbKeyS = 1
-    GuiControl, -Disabled, eTimeDelayKeyS
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyS
+  controlDisableToggle(cbKeyS, "eTimeDelayKeyS")
 return
 cbKeyD:
   Gui, Submit, NoHide
 
-  If cbKeyD = 1
-    GuiControl, -Disabled, eTimeDelayKeyD
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyD
+  controlDisableToggle(cbKeyD, "eTimeDelayKeyD")
 return
 cbKeyZ:
   Gui, Submit, NoHide
 
-  If cbKeyZ = 1
-    GuiControl, -Disabled, eTimeDelayKeyZ
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyZ
+  controlDisableToggle(cbKeyZ, "eTimeDelayKeyZ")
 return
 cbKeyX:
   Gui, Submit, NoHide
 
-  If cbKeyX = 1
-    GuiControl, -Disabled, eTimeDelayKeyX
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyX
+  controlDisableToggle(cbKeyX, "eTimeDelayKeyX")
 return
 cbKeyC:
   Gui, Submit, NoHide
 
-  If cbKeyC = 1
-    GuiControl, -Disabled, eTimeDelayKeyC
-  Else
-    GuiControl, +Disabled, eTimeDelayKeyC
+  controlDisableToggle(cbKeyC, "eTimeDelayKeyC")
 return
 
+controlDisableToggle(state, controlName)
+{
+  If state = 1
+    GuiControl, -Disabled, %controlName%
+  Else
+    GuiControl, +Disabled, %controlName%
+}
 
 btnStart:
   GuiControl, -Disabled, btnStop
@@ -121,47 +102,47 @@ btnStart:
     SetTitleMatchMode, 2
     If cbKeyQ = 1
     {
-      ControlSend,, q, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, q, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyQ%000
     }
     If cbKeyW = 1
     {
-      ControlSend,, w, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, w, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyW%000
     }
     If cbKeyE = 1
     {
-      ControlSend,, e, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, e, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyE%000
     }
     If cbKeyA = 1
     {
-      ControlSend,, a, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, a, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyA%000
     }
     If cbKeyS = 1
     {
-      ControlSend,, s, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, s, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyS%000
     }
     If cbKeyD = 1
     {
-      ControlSend,, d, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, d, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyD%000
     }
     If cbKeyZ = 1
     {
-      ControlSend,, z, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, z, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyZ%000
     }
     If cbKeyX = 1
     {
-      ControlSend,, x, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, x, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyX%000
     }
     If cbKeyC = 1
     {
-      ControlSend,, c, Phong Than_Dong Thien Phuc Dia
+      ControlSend,, c, %phongThanWinTitle%
       Sleep, %eTimeDelayKeyC%000
     }
   }
